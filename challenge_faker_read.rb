@@ -17,11 +17,14 @@ all_categories.each do |category|
   \b\bDescription: #{category.description}"
 end
 
-# Display all category names and their associated products
+# Display all category names and their associated products.
 # (name and price) in a nicely formatted list.
 puts "\nDisplaying all category names and their associated products.\n\n"
 
+# using .includes() to pass :products to the specific category to be listed.
 Category.includes(:products).find_each do |category|
   puts "\nCategory: #{category.name}"
+
+  # Printing out all the products associated with the category.
   puts (category.products.map { |product| "Product: #{product.name}, Price: #{product.price}" })
 end
