@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # @author Nigel Abrera
-# @date 20th Jan 2024
+# @date   20th Jan 2024
 
 require_relative 'ar.rb'
 
