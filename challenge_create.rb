@@ -22,20 +22,20 @@ new_product.stock_quantity = 34
 new_product.save
 
 # The Second way of creating a new product.
-second_new_product = Product.new( name:        "Green Onions",
-                                  description: "5 - 10 ks pkg.",
-                                  price: 23,
-                                  stock_quantity: 45 )
+second_new_product = Product.new(name:           "Green Onions",
+                                 description:    "5 - 10 ks pkg.",
+                                 price:          23,
+                                 stock_quantity: 45)
 
 # We will need to save the newly created second product.
 second_new_product.save
 
 # The third way of creating a new product.
 # Here, we don't need to use save because create will persist at all at once.
-third_new_product = Product.create( name:          "Chinese Fried Rice",
-                                    description:   "20 - 500 g pkgs",
-                                    price:          2,
-                                    stock_quantity: 34 )
+third_new_product = Product.create(name:           "Chinese Fried Rice",
+                                   description:    "20 - 500 g pkgs",
+                                   price:          2,
+                                   stock_quantity: 34)
 
 
 # Ensure that all three new products are persisted to the database,
@@ -45,7 +45,7 @@ third_new_product = Product.create( name:          "Chinese Fried Rice",
 new_invalid_product = Product.new(name: "Shrimp rolls")
 
 # Attempt to save this product and print all the AR errors which are generated.
-if (new_invalid_product.save)
+if new_invalid_product.save
   puts "New product successfully saved."
   puts new_invalid_product.inspect
 
